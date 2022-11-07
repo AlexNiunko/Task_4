@@ -11,10 +11,14 @@ public class TextComposite implements TextComponent{
         this.elementsName = elementsName;
     }
 
+    public TextComposite() {
+
+    }
+
     @Override
     public String value() {
         String res="";
-        List<TextComponent>elements=this.elements;
+        List<TextComponent>elements=getElements();
         for (TextComponent component:elements) {
             res+=component.value();
         }

@@ -20,7 +20,7 @@ public class TextElement implements TextComponent{
 
     @Override
     public String value() {
-        return getElement();
+        return this.element;
     }
 
     @Override
