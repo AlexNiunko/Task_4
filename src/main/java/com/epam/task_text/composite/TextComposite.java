@@ -14,12 +14,24 @@ public class TextComposite implements TextComponent{
     public TextComposite() {
 
     }
+    public List<TextComponent>getAllComponentsByType(ElementName element){
+        List<TextComponent>result=new ArrayList<>();
+        for (TextComponent component:elements) {
+            if (component.getName().equals(element)){
+                result.add(component);
+            }
+        }
+        return result;
+    }
 
     @Override
     public String value() {
         String res="";
         List<TextComponent>elements=getElements();
         for (TextComponent component:elements) {
+            if (component.getName().equals(ElementName.PARAGRAPH)){
+                res+="\n";
+            }
             res+=component.value();
         }
         return res;

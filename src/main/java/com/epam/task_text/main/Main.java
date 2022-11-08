@@ -1,5 +1,6 @@
 package com.epam.task_text.main;
 
+import com.epam.task_text.composite.ElementName;
 import com.epam.task_text.composite.TextComposite;
 import com.epam.task_text.parser.LexemaParser;
 import com.epam.task_text.parser.ParagraphParser;
@@ -21,10 +22,10 @@ public class Main {
      String str=reader.readFromFile("data\\text.txt");
      TextParser parser=new TextParser(str);
      TextComposite composite= parser.parse(str);
-     System.out.println(composite);
      System.out.println(composite.value());
-        TextWriter writer=new TextWriter();
-        writer.writerToFile(composite.value());
+
+     TextWriter writer=new TextWriter();
+     writer.writerToFile(composite.value());
 
 
 
